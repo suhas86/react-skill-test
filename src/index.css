@@ -11,3 +11,29 @@ body {
 .text-center {
   text-align: center;
 }
+.nav-background {
+  color: #6d5757;
+  background-color: #c8e3ff !important;
+}
+.graph-container {
+  margin: 10px;
+}
+.primary-bg {
+  background-color: #337AB7;
+}
+.secondary-bg {
+  background-color: #E74C3C;
+}
+.third-bg {
+  background-color: #F39C12;
+}
+.fourth-bg {
+  background-color: #7DCEA0;
+}
+.graph-card{
+  padding:10px;
+  color:#fff;
+}
+.score{
+  float: right;
+}

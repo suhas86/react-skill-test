@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import { connect } from "react-redux";
+import { checkUser } from "../action/users"
 class Login extends Component {
     state = {
         email: "",
@@ -13,10 +14,15 @@ class Login extends Component {
         }))
     }
     checkLogin() {
-        console.log(this.state);
-        axios.post('/users/login',this.state).then(response => console.log(response.data));
+        this.props.dispatch(checkUser(this.state)).then(response => {
+            const { user } = response;
+            if (!user.error) {
+              
+            }
+        });
     }
     render() {
+        const { user } = this.props;
         return (
             <div className="container-fluid">
                 <h2 className="text-center">Welcome to Skill Test</h2>
@@ -33,8 +39,12 @@ class Login extends Component {
                             <div className="form-group">
                                 <label htmlFor="signInPassword">Password</label>
                                 <input type="password" className="form-control" id="signInPassword"
-                                 placeholder="Password" onChange={this.handleInputChange.bind(this,'password')} />
+                                    placeholder="Password" onChange={this.handleInputChange.bind(this, 'password')} />
                             </div>
+                            {user.error && (<div className="alert alert-danger" role="alert">
+                                {user.message}
+                            </div>)}
+
                             <button type="submit" onClick={() => this.checkLogin()} className="btn btn-primary">Sign in</button>
                         </div>
                     </div>
@@ -73,5 +83,7 @@ class Login extends Component {
         )
     }
 }
-
-export default Login;
+function mapStateToProps({ user }) {
+    return { user }
+}
+export default connect(mapStateToProps)(Login);
