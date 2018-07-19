@@ -6,8 +6,32 @@ import App from './components/App';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import middleware from "./middleware";
-import reducer from "./reducer"
-const store = createStore(reducer, middleware);
+import reducer from "./reducer";
+
+function saveTOLocalStorage(state) {
+    try {
+      const serializeData = JSON.stringify(state);
+      localStorage.setItem("state", serializeData);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  function loadFromLocalStorage() {
+    try {
+      const serializeData = localStorage.getItem("state");
+      if (serializeData === null) return undefined;
+      return JSON.parse(serializeData);
+    } catch (error) {
+      console.log(error);
+      return undefined;
+    }
+  }
+  const persistedData = loadFromLocalStorage();
+
+
+const store = createStore(reducer,persistedData, middleware);
+
+store.subscribe(() => saveTOLocalStorage(store.getState()));
 ReactDOM.render(
     <Provider store={store}>
         <App />

@@ -51,12 +51,12 @@ class DashBoard extends Component {
     return (
       <div>
         <Navbar />
-        <div className="container graph-container">
+        <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-8">
               <ReactFC {...chartConfigs} />
             </div>
-            <div className="col">
+            <div className="col-4">
               <div className="row graph-card ">
                 <div className="card  card-body primary-bg ">
                   <span className="mb-0 score">Total Test</span>
@@ -84,13 +84,13 @@ class DashBoard extends Component {
         <div className="row graph-container">
           <div className="col">
             <div className="list-group">
-              <a href="#" className="list-group-item list-group-item-action">
+              <a href="javascript:void(0)" className="list-group-item list-group-item-action">
                 Cras justo odio
               </a>
-              <a href="#" className="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-              <a href="#" className="list-group-item list-group-item-action">Morbi leo risus</a>
-              <a href="#" className="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-              <a href="#" className="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+              <a href="javascript:void(0)" className="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <a href="javascript:void(0)" className="list-group-item list-group-item-action">Morbi leo risus</a>
+              <a href="javascript:void(0)" className="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+              <a href="javascript:void(0)" className="list-group-item list-group-item-action">Vestibulum at eros</a>
             </div>
           </div>
           <div className="col">

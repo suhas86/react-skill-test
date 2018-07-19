@@ -17,7 +17,7 @@ class Login extends Component {
         this.props.dispatch(checkUser(this.state)).then(response => {
             const { user } = response;
             if (!user.error) {
-              
+                this.props.history.push("/dashboard");
             }
         });
     }
