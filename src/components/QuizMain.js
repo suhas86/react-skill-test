@@ -38,7 +38,8 @@ class QuizMain extends Component {
                         <div className="card-body">
                             <h5 className="card-title">{this.state.item.name}</h5>
                             <p>{this.state.item.description}</p>
-                            <button type="submit" className="btn btn-primary">Take Test</button>
+                            <button type="submit" onClick={e => this.props.history.push(`/take-test/${this.state.item._id}`)}
+                                className="btn btn-primary">Take Test</button>
                         </div>
                     </div>
                 </div>

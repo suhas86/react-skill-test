@@ -2,13 +2,13 @@ import React from "react";
 import Navbar from "./Navbar";
 import Stats from "./Stats";
 import QuizMain from "./QuizMain"
- const DashBoard =() => {
+ const DashBoard =(props) => {
     return (
       <div>
         <Navbar />
         <Stats />
         <hr />
-        <QuizMain />
+        <QuizMain history={props.history} />
       </div>
     )
 }
