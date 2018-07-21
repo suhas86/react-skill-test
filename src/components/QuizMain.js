@@ -47,7 +47,6 @@ class QuizMain extends Component {
     }
 }
 function mapStateToProps({ quiz }) {
-
     return {
         quiz
     }

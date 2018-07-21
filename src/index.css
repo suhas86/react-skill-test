@@ -37,3 +37,6 @@ body {
 .score{
   float: right;
 }
+.result-list{
+  margin:10px;
+}

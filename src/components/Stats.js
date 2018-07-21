@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
 import ReactFC from 'react-fusioncharts';
-import { getStats } from "../action/stats"
+import { getStats } from "../action/stats";
+import {calculateStats} from "../utils/helper"
 Charts(FusionCharts);
 
 const colors = "#337AB7, #E74C3C, #F39C12, #7DCEA0";
@@ -16,7 +17,7 @@ class Stats extends Component {
       }
     componentDidMount() {
         this.props.dispatch(getStats()).then((response) => {
-            const { stats } = response;
+            const  stats  = calculateStats(response.stats);
             myDataSource = {
                 chart: {
                     showlabels: "0",
@@ -95,7 +96,7 @@ class Stats extends Component {
 }
 function mapStateToProps({stats}) {
     return {
-      stats
+      stats:calculateStats(stats)
     }
   }
 export default connect(mapStateToProps)(Stats)

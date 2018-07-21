@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getHeader,calculateStats } from "../utils/helper"
+import { getHeader } from "../utils/helper"
 export const RECEIVE_STATS = "RECEIVE_STATS";
 
 function receiveStats(stats) {
@@ -12,6 +12,6 @@ function receiveStats(stats) {
 export const getStats = () => {
     return dispatch => {
         return axios.get("/test/stats", getHeader())
-            .then(response => dispatch(receiveStats(calculateStats(response.data))))
+            .then(response => dispatch(receiveStats(response.data)))
     }
 }
