@@ -27,7 +27,8 @@ class Login extends Component {
         return (
             <div className="container-fluid">
                 <h2 className="text-center">Welcome to Skill Test</h2>
-                <div className="row">
+                <div className="row graph-container">
+                <div className="col"></div>
                     <div className="col">
                         <div className="card card-container">
                             <h3>Sign in</h3>
@@ -49,36 +50,7 @@ class Login extends Component {
                             <button type="submit" onClick={() => this.checkLogin()} className="btn btn-primary">Sign in</button>
                         </div>
                     </div>
-                    <div className="col">
-                        <div className="card card-container">
-                            <h3>Sign Up</h3>
-                            <div className="form-group">
-                                <label htmlFor="firstName">First Name</label>
-                                <input type="email" className="form-control" id="firstName" aria-describedby="emailHelp" placeholder="First Name" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="lastName">Last Name</label>
-                                <input type="email" className="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Last Name" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email address</label>
-                                <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="mobileNo">Mobile No</label>
-                                <input type="email" className="form-control" id="mobileNo" aria-describedby="emailHelp" placeholder="Enter Mobile No" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password"> Password</label>
-                                <input type="email" className="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter password" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="confirmPassword">Confirm Password</label>
-                                <input type="email" className="form-control" id="confirmPassword" aria-describedby="emailHelp" placeholder="Confirm password" />
-                            </div>
-                            <button type="submit" className="btn btn-primary">Sign up</button>
-                        </div>
-                    </div>
+                    <div className="col"></div>
                 </div>
             </div>
         )

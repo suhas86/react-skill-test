@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
 import { Link } from "react-router-dom";
+import {clearUser} from "../action/users"
 class Navbar extends Component {
+    logout() {
+        localStorage.clear();
+        this.props.dispatch(clearUser())
+    }
     render() {
         const { user } = this.props;
         return (
@@ -22,6 +27,7 @@ class Navbar extends Component {
                         <span className="navbar-text">
                             Welcome {user.firstName} {user.lastName}
                         </span>
+                        <span className="fa fa-sign-out logout" onClick={e => this.logout()}></span>
                     </form>
                 </div>
             </nav>
