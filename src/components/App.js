@@ -4,7 +4,7 @@ import Login from "./Login"
 import Dashboard from "./Dashboard"
 import Results from "./Results"
 import TakeTest from "./TakeTest"
-import { BrowserRouter as Router, Route,Redirect,Switch } from "react-router-dom";
+import { HashRouter as Router, Route,Redirect,Switch } from "react-router-dom";
 class App extends Component {
   render() {
     const {token} = this.props;

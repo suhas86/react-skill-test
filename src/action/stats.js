@@ -11,7 +11,7 @@ function receiveStats(stats) {
 
 export const getStats = () => {
     return dispatch => {
-        return axios.get("/test/stats", getHeader())
+        return axios.get("https://young-shore-27367.herokuapp.com/test/stats", getHeader())
             .then(response => dispatch(receiveStats(response.data)))
     }
 }

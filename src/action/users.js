@@ -17,7 +17,7 @@ export function clearUser() {
 }
 export const checkUser = (request) => {
     return dispatch => {
-        return axios.post('/users/login', request)
+        return axios.post('https://young-shore-27367.herokuapp.com/users/login', request)
             .then(response => dispatch(receiveUser(response.data)))
     }
 }

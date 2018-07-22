@@ -24,7 +24,7 @@ class TakeTest extends Component {
         data.correctAnswer = currentQuestion.answer;
         data.timeTaken = 5;
         // Save Answer
-        axios.post("/test/saveanswer", data, getHeader())
+        axios.post("https://young-shore-27367.herokuapp.com/test/saveanswer", data, getHeader())
             .then((response) => {
                 let currentCorrectAnswer = this.state.correctCount;
 
@@ -47,7 +47,7 @@ class TakeTest extends Component {
                     data.testName = this.props.singleQuiz.name;
                     data.timeTaken = 40
 
-                    axios.post("/test/savetest", data, getHeader())
+                    axios.post("https://young-shore-27367.herokuapp.com/test/savetest", data, getHeader())
                         .then(response => console.log(response))
                 }
             });

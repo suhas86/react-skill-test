@@ -2,7 +2,9 @@ export const getHeader = () => {
     const token = localStorage.getItem('token')
     const config = {
 
-        headers: { 'x-access-token': token }
+        headers: {
+            'Access-Control-Allow-Origin': '*', 
+            'x-access-token': token }
     }
     return config;
 }

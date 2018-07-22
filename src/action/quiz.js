@@ -11,7 +11,7 @@ function receiveAllList(quizlist) {
 
 export const getAllList = () => {
     return dispatch => {
-        axios.get("/test/admin/all",getHeader())
+        axios.get("https://young-shore-27367.herokuapp.com/test/admin/all",getHeader())
         .then(response => dispatch(receiveAllList(response.data)))
     }
 }
